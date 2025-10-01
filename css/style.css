@@ -198,18 +198,18 @@ img {
     }
     
     .contact-section {
-        flex-direction: column;  /* stack vertically */
+        flex-direction: column; 
     }
 
     .map {
-        margin-right: 0;   /* remove side margin */
-        margin-bottom: 20px; /* add spacing below map */
+        margin-right: 0;  
+        margin-bottom: 20px; 
     }
 
     .menu-container {
         display: flex;
-        flex-direction: column;  /* instead of row */
-        align-items: center;     /* center them */
+        flex-direction: column; 
+        align-items: stretch;   
     }
 
     table {
@@ -218,5 +218,6 @@ img {
     
     .slider {
         max-width: 100%;
+        margin-top: 20px;
     }
 }

@@ -207,11 +207,16 @@ img {
     }
 
     .menu-container {
+        display: flex;
         flex-direction: column;  /* instead of row */
         align-items: center;     /* center them */
     }
 
     table {
         width: 100%;
+    }
+    
+    .slider {
+        max-width: 100%;
     }
 }

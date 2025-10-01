@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu - Sushi Island</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Sushi Island</div>
+          
+            <div class="hamburger">
+              ☰
+            </div>
+          
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="menu.html">Menu</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Restaurant Menu</h1>
+
+    <div class="menu-container">
+        <table>
+            <tr>
+                <th>Kani Salad</th>
+                <th>4.99</th>
+            </tr>
+            <tr>
+                <th>Miso Soup</th>
+                <th>2.99</th>
+            </tr>
+            <tr>
+                <th>Spicy Crab Roll</th>
+                <th>10.99</th>
+            </tr>
+            <tr>
+                <th>Spicy Scallop Sushi</th>
+                <th>11.99</th>
+            </tr>
+            <tr>
+                <th>Spicy Tuna Roll</th>
+                <th>10.99</th>
+            </tr>
+            <tr>
+                <th>Udon</th>
+                <th>14.99</th>
+            </tr>
+    
+        </table>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="images/kani_salad.jpg" alt="Kani Salad">
+                        <div class="label">Kani Salad</div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/miso_soup.jpg" alt="Miso Soup">
+                        <div class="label">Miso Soup</div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/spicy_crab_roll.jpg" alt="Spicy Crab Roll">
+                        <div class="label">Spicy Crab Roll</div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/spicy_scallop_sushi.jpg" alt="Spicy Scallop Sushi">
+                        <div class="label">Spicy Scallop Sushi</div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/spicy_tuna_roll.jpg" alt="Spicy Tuna Roll">
+                        <div class="label">Spicy Tuna Roll</div>
+                    </div>
+                    <div class="slide">
+                        <img src="images/udon.jpg" alt="Udon">
+                        <div class="label">Udon</div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="button" onclick="prevSlide()">❮</button>
+                    <button class="button" onclick="nextSlide()">❯</button>
+                </div>
+            </div>
+        </div>  
+    </div>
+    <br>
+    
+
+
+    <footer>
+        <p>© 2025 Sushi Island | Everyday 11:30 AM - 9:30 PM | Follow us on 
+            <a href="#">Facebook</a> | 
+            <a href="#">Instagram</a>
+        </p>   
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slide').length;
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+            slides.style.transform = 'translateX(' + (-currentSlide * 100) + '%)';
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+    </script>
+
+</body>
+</html>

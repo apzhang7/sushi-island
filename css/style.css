@@ -137,10 +137,6 @@ footer {
     gap: 20px;
 }
 
-table {
-    width: 40%;
-}
-
 th, td {
     border: 2px solid #ddd;
     padding: 10px;
@@ -221,3 +217,118 @@ img {
         margin-top: 20px;
     }
 }
+/* 🛒 CART TOGGLE BUTTON */
+.cart-toggle-btn {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    background: #a9caee;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+    font-size: 15px;
+    cursor: pointer;
+    z-index: 2000;
+  }
+  
+  /* Moves button with the cart */
+  .cart.open + .cart-toggle-btn {
+    right: 320px; /* matches cart width + gap */
+  }
+  
+  /* 🛒 CART POPUP PANEL */
+  .cart {
+    position: absolute;
+    top: 80px;
+    right: -350px; /* hidden by default */
+    width: 300px;
+    height: 60vh;
+    background: #f9f9f9;
+    border-left: 2px solid #000000;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    z-index: 1500;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .cart.open {
+    right: 0;
+  }
+  
+  .cart h3 {
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  /* Shorter scrollable area for cart items */
+  .cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 5px;
+    max-height: 100%
+  }
+  
+  /* Each item */
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+    padding: 8px;
+  }
+  
+  .cart-item-buttons {
+    display: flex;
+    gap: 6px;
+  }
+  
+  .cart-item button {
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+  
+  .cart-item .minus-btn {
+    background: orange; /* distinguish the minus button */
+  }
+  
+  /* Bottom area */
+  .cart-footer {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    background: #fff;
+  }
+  
+  .cart-total {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .clear-cart {
+    background: #000000;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* ➕ ADD BUTTON (LEFT SIDE OF ITEM NAME) */
+  .add-btn {
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px 8px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
